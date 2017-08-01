@@ -15,26 +15,26 @@ class mobileSpider(CrawlSpider):
     name = "mobileSpider"
     # 华为,三星，vivo,oppo,苹果，魅族，小米，美图,联想，华硕,酷派，索尼，锤子科技，HTC,惠普，黑莓，夏普，朵唯,乐视，TCL,荣耀
     start_urls = [
-    #               http://detail.zol.com.cn/cell_phone_index/subcate57_613_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_98_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_1795_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_1673_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_544_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_1434_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_34645_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_35179_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_1763_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_227_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_1606_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_1069_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_35849_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_33080_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_223_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_12772_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_300_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_33855_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_33992_list_1.html",
-    #               "http://detail.zol.com.cn/cell_phone_index/subcate57_171_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_613_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_98_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_1795_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_1673_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_544_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_1434_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_34645_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_35179_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_1763_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_227_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_1606_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_1069_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_35849_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_33080_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_223_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_12772_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_300_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_33855_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_33992_list_1.html",
+                  "http://detail.zol.com.cn/cell_phone_index/subcate57_171_list_1.html",
                   "http://detail.zol.com.cn/cell_phone_index/subcate57_50840_list_1.html"
     
                    ]
@@ -72,8 +72,8 @@ class mobileSpider(CrawlSpider):
              url = info.xpath("//div[@class ='breadcrumb']/a[4]/@href").extract_first()
              url = response.urljoin(url)
              item['phone_name'] = phone_name
-             #item['brand'] = brand
-             item['brand'] = '华为荣耀'
+             item['brand'] = brand
+             # item['brand'] = '华为荣耀'
              item['url'] = url
              user_name =  info.xpath("div[@class='comments-user']/div[@class='comments-user-name']/span/text()").extract_first()
              comment_time =  info.xpath("div[@class='comments-list-content']/div[@class='single-score clearfix']"
