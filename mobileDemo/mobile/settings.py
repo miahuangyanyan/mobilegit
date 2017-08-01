@@ -33,7 +33,8 @@ ITEM_PIPELINES={
 #
 # MONGO_HOST = '127.0.0.1' #主机ip
 MONGO_PORT = 27017
-MONGO_DB = 'spider'#库名
+#MONGO_DB = 'spider'#库名
+MONGO_DB = 'mobile_spider'#库名
 MONGO_COLL = 'zol' #collection 名
 MONGO_HOST = '192.168.200.47' #主机ip
 
