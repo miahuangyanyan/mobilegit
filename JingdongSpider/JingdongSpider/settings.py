@@ -13,6 +13,11 @@ BOT_NAME = 'JingdongSpider'
 
 SPIDER_MODULES = ['JingdongSpider.spiders']
 NEWSPIDER_MODULE = 'JingdongSpider.spiders'
+# #启用Redis调度存储请求队列
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+# #确保所有的爬虫通过Redis去重
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'JingdongSpider (+http://www.yourdomain.com)'
@@ -66,6 +71,7 @@ SPIDER_MIDDLEWARES = {
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'JingdongSpider.pipelines.JingdongspiderPipeline': 300,
+    # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
