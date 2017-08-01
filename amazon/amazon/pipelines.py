@@ -15,7 +15,8 @@ class MongoDBPipeline(object):
     @classmethod
     def from_crawler(cls, crawler):
         # 连接mongodb
-        return cls('192.168.200.47', 27017, 'spider', 'amazon')
+        #return cls('192.168.200.47', 27017, 'spider', 'amazon')
+        return cls('192.168.200.47', 27017, 'mobile_spider', 'amazon')
         #return cls('localhost', 27017, 'spider', 'amazon')
     def process_item(self, item, spider):
         self.collection.insert(dict(item))
